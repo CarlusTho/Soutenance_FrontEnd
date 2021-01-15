@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoQR Coding</title>
+</head>
+<body>
+
+    <form style="margin-top: 15%; margin-left: 40%;">
+                
+        <input type="text" id="texte"> <br>
+
+        <!--    On active la fonction de récupération de QR code quand on clique    -->
+
+        <input type="button" id="bouton" value= "Votre QRcode" onclick="qrlien()">
+
+        <!--    Puis on affiche l'image -->
+
+        <!--    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${lien}">   -->
+
+    </form>
+
+    <script type="text/javascript">
+
+        // Fonction pour récupérer l'URL
+
+        function qrlien(){
+
+            // On récupère la valeur du texte implémenté
+
+            var lien = document.getElementById(texte);
+
+            // On appelle l'API avec l'url demandée
+
+            fetch(`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${lien}`)
+
+            })
+        }
+    </script>
+
+</body>
+</html>
